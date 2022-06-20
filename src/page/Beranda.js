@@ -3,6 +3,10 @@ import Navbar from "../component/Navbar"
 import backgroundBeranda from "../assets/image/backgroundBeranda.png"
 import worldPerson from "../assets/image/worldPerson.jpg"
 import BopitAppScreen from "../assets/image/BopitAppScreen.png"
+import Humidity from "../assets/image/Humidity.png"
+import Temperature from "../assets/image/Temperature.png"
+import WaterDrop from '../assets/image/WaterDrop.png'
+import SquareDot from '../assets/svg'
 
 function Beranda() {
     return (
@@ -35,6 +39,43 @@ function Beranda() {
                         Tak perlu lagi mengeluh 'ribet dan ngga ada waktu' untuk melakukan penyiraman tanaman. Dengan BoPiT, semua dapat di kontrol dari genggaman Anda.
                     </div>
                     <img src={BopitAppScreen} className="w-middle m-16 rounded-3xl" />
+                </div>
+            </div>
+            <div className='w-full h-screen'>
+                <div className='text-5xl text-center font-extrabold mt-44'>
+                    Fitur perangkat kami
+                </div>
+                <div className='text-2xl text-grey text-center w-1/3 mx-auto mt-12'>
+                    Beberapa fitur utama kami sediakan dalam perangkat untuk memudahkan dalam pengawasan tanaman
+                </div>
+                <div className='flex flex-wrap justify-center mt-24 relative py-24'>
+                    <div className='absolute top-0 -z-10 left-36'>
+                        <SquareDot />
+                    </div>
+                    <div class="flex p-10 max-w-md h-72 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center">
+                        <img src={Humidity} className='h-32' />
+                        <div className='px-8'>
+                            <p className='text-xl font-semibold mb-3'>Kelembaban</p>
+                            <p class="font-normal text-gray-700 dark:text-gray-400">Pemantauan kelembaban udara dan tanah </p>
+                        </div>
+                    </div>
+                    <div class="flex p-10 max-w-md h-72 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center mx-12">
+                        <img src={Temperature} className='h-32' />
+                        <div className='px-8'>
+                            <p className='text-xl font-semibold mb-3'>Suhu</p>
+                            <p class="font-normal text-gray-700 dark:text-gray-400">Pemantauan suhu udara dan tanah </p>
+                        </div>
+                    </div>
+                    <div class="flex p-10 max-w-md h-72 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center">
+                        <img src={WaterDrop} className='h-32' />
+                        <div className='px-8'>
+                            <p className='text-xl font-semibold mb-3'>Penyiraman</p>
+                            <p class="font-normal text-gray-700 dark:text-gray-400">Pemantauan aktifitas penyiraman tanaman </p>
+                        </div>
+                    </div>
+                    <div className='absolute bottom-0 -z-10 right-36'>
+                        <SquareDot />
+                    </div>
                 </div>
             </div>
         </div>
