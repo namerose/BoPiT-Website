@@ -7,6 +7,10 @@ import Humidity from "../assets/image/Humidity.png"
 import Temperature from "../assets/image/Temperature.png"
 import WaterDrop from '../assets/image/WaterDrop.png'
 import SquareDot from '../assets/svg'
+import IotIC from '../assets/image/IotIC.png'
+import peopleHandphone from '../assets/image/peopleHandphone.png'
+import peopleCut from '../assets/image/peopleCut.png'
+import waterWorld from '../assets/image/waterWorld.png'
 
 function Beranda() {
     return (
@@ -75,6 +79,34 @@ function Beranda() {
                     </div>
                     <div className='absolute bottom-0 -z-10 right-36'>
                         <SquareDot />
+                    </div>
+                </div>
+            </div>
+            <div className='w-full h-screen bg-dark'>
+                <div className='text-white text-5xl flex justify-center text-center pt-48 font-bold'>
+                    Dari hal kecil, <br />
+                    tumbuh menjadi besar...
+                </div>
+                <div className='flex flex-wrap justify-center mt-44'>
+                    <div class="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-green-light rounded-3xl shadow-sm shadow-green-light mx-6">
+                        <img src={IotIC} className='h-24 -mt-12' />
+                        <p className='font-extrabold text-4xl py-12'>3.4 ribu+</p>
+                        <p className='max-w-fit text-center text-md font-medium'>Jumlah perangkat yang telah dipasarkan di seluruh dunia.</p>
+                    </div>
+                    <div class="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-purple-light rounded-3xl shadow-sm shadow-green-light mx-6">
+                        <img src={peopleHandphone} className='h-24 -mt-12' />
+                        <p className='font-extrabold text-4xl py-12'>2.1 ribu+</p>
+                        <p className='max-w-fit text-center text-md font-medium'>Jumlah pengguna perangkat kami.</p>
+                    </div>
+                    <div class="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-yellow-light rounded-3xl shadow-sm shadow-green-light mx-6">
+                        <img src={peopleCut} className='h-24 -mt-12' />
+                        <p className='font-extrabold text-4xl py-12'>1.8 ribu+</p>
+                        <p className='max-w-fit text-center text-md font-medium'>Ton emisi karbon yang telah diserap sejak 2018.</p>
+                    </div>
+                    <div class="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-orange-light rounded-3xl shadow-sm shadow-green-light mx-6">
+                        <img src={waterWorld} className='h-24 -mt-12' />
+                        <p className='font-extrabold text-4xl py-12'>5.8 ribu+</p>
+                        <p className='max-w-fit text-center text-md font-medium'>Ton air yang telah di hemat sejak 2018.</p>
                     </div>
                 </div>
             </div>
