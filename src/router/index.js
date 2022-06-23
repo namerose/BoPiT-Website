@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 import Beranda from '../page/Beranda'
 import TentangKami from '../page/TentangKami'
 import Produk from '../page/Produk'
-import Blog from '../page/Blog'
-import Bantuan from '../page/Bantuan'
+import LoginPage from '../page/LoginPage'
+import HubungiKami from '../page/HubungiKamiPage'
 
 function Router() {
   return (
@@ -12,8 +12,8 @@ function Router() {
       <Route path="/" element={<Beranda />} />
       <Route path="/tentang-kami" element={<TentangKami />} />
       <Route path="/produk" element={<Produk />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/bantuan" element={<Bantuan />} />
+      <Route path="/hubungi-kami" element={<HubungiKami />} />
+      <Route path="/login" element={<LoginPage />} />
     </Routes>
   )
 }

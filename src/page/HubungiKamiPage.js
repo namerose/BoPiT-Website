@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from '../component/Navbar'
 
-function Produk() {
+function ContactUsPage() {
     return (
         <div>
-            <Navbar page='produk' />
+        <Navbar page = 'hubungi-kami' />
         </div>
     )
 }
 
-export default Produk
+export default ContactUsPage

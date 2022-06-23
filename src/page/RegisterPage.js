@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from '../component/Navbar'
 
-function Produk() {
+function RegisterPage() {
     return (
         <div>
-            <Navbar page='produk' />
+            <Navbar page='register' />
         </div>
     )
 }
 
-export default Produk
+export default RegisterPage

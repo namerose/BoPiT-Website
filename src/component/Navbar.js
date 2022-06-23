@@ -32,10 +32,10 @@ function Navbar({ page = 'beranda' }) {
                         <Link to='/produk' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'produk' ? activeLink : 'text-light'}`}>Produk</Link>
                     </li>
                     <li className="p-4 text-xl">
-                        <Link to='/blog' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'blog' ? activeLink : 'text-light'}`}>Blog</Link>
+                        <Link to='/hubungi-kami' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'hubungi-kami' ? activeLink : 'text-light'}`}>Hubungi Kami</Link>
                     </li>
                     <li className="p-4 text-xl">
-                        <Link to='/bantuan' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'bantuan' ? activeLink : 'text-light'}`}>Bantuan</Link>
+                        <Link to='/login' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'login' ? activeLink : 'text-light'}`}>Login / Register</Link>
                     </li>
                 </ul>
             </nav>
