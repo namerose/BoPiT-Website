@@ -16,7 +16,7 @@ function Navbar({ page = 'beranda' }) {
 
     const activeLink = 'text-white underline underline-offset-8'
     return (
-        <div className={`fixed h-28 w-full overflow-hidden ease-in transition-colors ${colorNav ? 'bg-dark' : ''}`}>
+        <div className={`fixed h-28 w-full overflow-hidden ease-in transition-colors z-50 ${colorNav ? 'bg-dark' : ''}`}>
             <nav className="flex justify-between items-center m-auto h-full px-60">
                 <a href="#">
                     <img src={colorNav ? LogoBerwarna : Logo} className="w-28" />
