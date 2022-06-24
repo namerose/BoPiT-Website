@@ -11,6 +11,7 @@ import IotIC from '../assets/image/IotIC.png'
 import peopleHandphone from '../assets/image/peopleHandphone.png'
 import peopleCut from '../assets/image/peopleCut.png'
 import waterWorld from '../assets/image/waterWorld.png'
+import HarrisonFord from '../assets/image/HarrisonFord.jpg'
 
 function Beranda() {
     return (
@@ -108,6 +109,13 @@ function Beranda() {
                         <p className='font-extrabold text-4xl py-12'>5.8 ribu+</p>
                         <p className='max-w-fit text-center text-md font-medium'>Ton air yang telah di hemat sejak 2018.</p>
                     </div>
+                </div>
+            </div>
+            <div className='w-full h-screen bg-dark flex justify-center items-center'>
+                <img src={HarrisonFord} className='h-96 rounded-3xl bg-white mx-12' />
+                <div className='w-1/3'>
+                    <p className='text-white px-12 text-5xl'>"Sederhananya, jika kita tidak melindungi alam, kita tidak bisa melindungi diri kita sendiri."</p>
+                    <p className='font-semibold text-white text-2xl float-right mt-7'>~ Harrison Ford (2018)</p>
                 </div>
             </div>
         </div>
