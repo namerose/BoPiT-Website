@@ -5,6 +5,7 @@ import TentangKami from '../page/TentangKami'
 import Produk from '../page/Produk'
 import LoginPage from '../page/LoginPage'
 import HubungiKami from '../page/HubungiKamiPage'
+import RegisterPage from '../page/RegisterPage'
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/produk" element={<Produk />} />
       <Route path="/hubungi-kami" element={<HubungiKami />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Routes>
   )
 }
