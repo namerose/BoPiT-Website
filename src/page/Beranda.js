@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from "../component/Navbar"
 import backgroundBeranda from "../assets/image/backgroundBeranda.png"
 import worldPerson from "../assets/image/worldPerson.jpg"
@@ -6,7 +6,7 @@ import BopitAppScreen from "../assets/image/BopitAppScreen.png"
 import Humidity from "../assets/image/Humidity.png"
 import Temperature from "../assets/image/Temperature.png"
 import WaterDrop from '../assets/image/WaterDrop.png'
-import SquareDot from '../assets/svg'
+import { SquareDot } from '../assets/svg'
 import IotIC from '../assets/image/IotIC.png'
 import peopleHandphone from '../assets/image/peopleHandphone.png'
 import peopleCut from '../assets/image/peopleCut.png'
@@ -14,6 +14,10 @@ import waterWorld from '../assets/image/waterWorld.png'
 import HarrisonFord from '../assets/image/HarrisonFord.jpg'
 
 function Beranda() {
+    useEffect(() => {
+        document.title = "BoPiT"
+    }, []);
+
     return (
         <div>
             <Navbar />

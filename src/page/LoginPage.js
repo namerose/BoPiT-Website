@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Logo from '../assets/image/LogoBerwarna.png'
 
 function LoginPage() {
+    useEffect(() => {
+        document.title = "Masuk | BoPiT"
+    }, []);
+
     return (
         <div className='w-full h-screen flex flex-col justify-center items-center'>
             <div className="w-1/4">
-                <div className="flex justify-center">
+                <Link to='/' className="flex justify-center">
                     <img src={Logo} className="w-middle" />
-                </div>
+                </Link>
                 <div className='mt-10 text-3xl text-center font-extrabold' >
                     Masuk
                 </div>
@@ -34,7 +39,7 @@ function LoginPage() {
                     </div>
                     <div className="mt-5 flex justify-center">
                         <p className="text-2xs ml-2 inline">Belum memiliki akun?</p>
-                        <a className="text-2xs font-extrabold ml-2 text-blue-500 cursor-pointer inline">Daftar</a>
+                        <Link to='/register' className="text-2xs font-extrabold ml-2 text-blue-500 cursor-pointer inline">Daftar</Link>
                     </div>
                 </div>
             </div>

@@ -1,17 +1,21 @@
-import React from 'react'
-import ArrrowLeft from '../assets/svg/arrow_left.js'
+import React, { useEffect } from 'react'
+import { ArrowLeft } from '../assets/svg';
 import ImagePeople from '../assets/image/bunchofpeople.png'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function RegisterPage() {
+    const navigate = useNavigate();
+    useEffect(() => {
+        document.title = "Daftar | BoPiT"
+    }, []);
 
     return (
-        <div className='w-full h-screen '>
-            <div>
-                <ArrrowLeft fill="#fff" />
+        <div className='w-full h-screen grid grid-cols-2'>
+            <div onClick={() => navigate(-1)} className='absolute top-14 left-14'>
+                <ArrowLeft />
             </div>
-            <div className='flex flex-nowrap'>
-                <div className="w-2/6 ml-20">
+            <div className="place-self-center">
+                <div>
                     <div className='mt-10 text-3xl font-extrabold' >
                         Daftar akun baru
                     </div>
@@ -50,13 +54,13 @@ function RegisterPage() {
                         <Link to='/login' className="text-2xs font-extrabold ml-2 text-blue-500 cursor-pointer inline">Masuk</Link>
                     </div>
                 </div>
-                <div className='w-1/2 flex justify-center'>
-                    <div className="mt-10 text-6xl grid leading-tight">
-                        Ayo!,<br />bergabung <br />dengan kami.
-                    </div>
-                </div>
             </div>
-            <img src={ImagePeople} className="w-2/5 fixed bottom-0 right-16" />
+            <div>
+                <div className="mt-10 text-6xl grid leading-tight">
+                    Ayo!,<br />bergabung <br />dengan kami.
+                </div>
+                <img src={ImagePeople} className="w-2/5 fixed bottom-0 right-16" />
+            </div>
         </div>
     )
 }

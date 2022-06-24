@@ -48,4 +48,26 @@ const SquareDot = (props) => (
     </svg>
 );
 
-export default SquareDot;
+const ArrowLeft = (props) => (
+    <svg
+        width={55}
+        height={43}
+        viewBox="0 0 55 43"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+    >
+        <path
+            d="M24.2082 1.95703L1.1665 21.4987L24.2082 41.0404M1.1665 21.4987H53.8332"
+            stroke="black"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);
+
+export {
+    SquareDot,
+    ArrowLeft
+};

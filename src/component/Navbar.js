@@ -35,7 +35,7 @@ function Navbar({ page = 'beranda' }) {
                         <Link to='/hubungi-kami' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'hubungi-kami' ? activeLink : 'text-light'}`}>Hubungi Kami</Link>
                     </li>
                     <li className="p-4 text-xl">
-                        <Link to='/login' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'login' ? activeLink : 'text-light'}`}>Login / Register</Link>
+                        <Link to='/login' className={`font-bold transition-all text-light border-2 p-3 rounded-xl hover:text-white hover:border-white border-light`}>Masuk / Daftar</Link>
                     </li>
                 </ul>
             </nav>
