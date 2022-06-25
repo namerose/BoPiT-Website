@@ -24,7 +24,7 @@ function Beranda() {
             <div className="w-full h-screen bg-cover bg-no-repeat" style={{
                 backgroundImage: `url(${backgroundBeranda})`
             }}>
-                <div class="h-screen text-9xl grid content-center text-white font-bold ml-36">
+                <div class="h-screen text-8xl grid content-center text-white font-bold ml-36">
                     Ubah masa<br /> depan bumi,<br /> dengan kami!
                 </div>
             </div>

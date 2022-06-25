@@ -67,7 +67,24 @@ const ArrowLeft = (props) => (
     </svg>
 );
 
+const LocationIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="26"
+        height="33"
+        fill="none"
+        viewBox="0 0 26 33"
+        {...props}
+    >
+        <path
+            fill="#FCF8F8"
+            d="M11.28 31.874C1.766 18.49 0 17.117 0 12.199 0 5.462 5.628 0 12.571 0c6.944 0 12.572 5.462 12.572 12.199 0 4.918-1.766 6.292-11.28 19.675-.624.875-1.96.875-2.583 0zm1.291-14.592c2.893 0 5.239-2.276 5.239-5.083 0-2.807-2.346-5.083-5.239-5.083s-5.238 2.276-5.238 5.083c0 2.807 2.345 5.083 5.238 5.083z"
+        ></path>
+    </svg>
+);
+
 export {
     SquareDot,
-    ArrowLeft
+    ArrowLeft,
+    LocationIcon
 };
