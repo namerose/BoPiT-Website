@@ -1,6 +1,7 @@
 import React from 'react'
 import LogoBerwarna from '../assets/image/LogoBerwarna.png'
 import DownloadAppStore from '../assets/image/DownloadAppStore.png'
+import { Link } from "react-router-dom";
 
 function Footer() {
     return (
@@ -10,16 +11,23 @@ function Footer() {
                 <div>
                     <ul className="list-none text-white mt-10">
                         <li className='font-bold text-xl py-4'>Perusahaan</li>
-                        <li className='font-normal text-xl py-4'>Tentang</li>
-                        <li className='font-normal text-xl py-4'>Produk</li>
-                        <li className='font-normal text-xl py-4'>Blog</li>
+                        <li className='font-normal text-xl py-4'>
+                            <Link to='/tentang-kami' className="text-xl text-white cursor-pointer">Tentang</Link>
+                        </li>
+                        <li className='font-normal text-xl py-4'>
+                            <Link to='/produk' className="text-xl text-white cursor-pointer">Produk</Link>
+                        </li>
                     </ul>
                 </div>
                 <div className='place-self-center'>
                     <ul className="list-none text-white mt-10">
                         <li className='font-bold text-xl py-4'>Hubungi Kami</li>
-                        <li className='font-normal text-xl py-4'>Bantuan</li>
-                        <li className='font-normal text-xl py-4'>Kontak</li>
+                        <li className='font-normal text-xl py-4'>
+                            <Link to='/bantuan' className="text-xl text-white cursor-pointer">Bantuan</Link>
+                        </li>
+                        <li className='font-normal text-xl py-4'>
+                            <Link to='/hubungi-kami' className="text-xl text-white cursor-pointer">Kontak</Link>
+                        </li>
                     </ul>
                 </div>
                 <div className='place-self-center'>

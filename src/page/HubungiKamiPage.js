@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../component/Navbar'
+import Footer from '../component/Footer'
+
 import { LocationIcon } from '../assets/svg'
 
 function ContactUsPage() {
+    useEffect(() => {
+        document.title = "Kontak kami | BoPiT";
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div>
             <Navbar page='hubungi-kami' />
@@ -40,6 +47,7 @@ function ContactUsPage() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

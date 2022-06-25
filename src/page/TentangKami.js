@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import Navbar from '../component/Navbar'
+import Footer from '../component/Footer'
+
 import peopleGraduate from '../assets/image/peopleGraduate.png'
 import backgroundBeranda from "../assets/image/backgroundBeranda.png"
 import logoGKM from '../assets/image/LogoGKM.png'
@@ -7,7 +9,8 @@ import worldMap from '../assets/image/WorldMap.png'
 
 function TentangKami() {
     useEffect(() => {
-        document.title = "Tentang kami | BoPiT"
+        document.title = "Tentang kami | BoPiT";
+        window.scrollTo(0, 0);
     }, []);
 
     return (
@@ -78,6 +81,7 @@ function TentangKami() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
