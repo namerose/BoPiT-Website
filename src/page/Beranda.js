@@ -23,7 +23,8 @@ import 'swiper/css';
 
 function Beranda() {
     useEffect(() => {
-        document.title = "BoPiT"
+        document.title = "BoPiT";
+        window.scrollTo(0, 0);
     }, []);
 
     return (

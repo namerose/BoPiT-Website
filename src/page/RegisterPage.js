@@ -34,12 +34,16 @@ function RegisterPage() {
                     <div className="flex flex-column">
                         <div className="mt-5 w-1/2">
                             <p className="text-3xs font-semibold ml-2 ">Kata Sandi</p>
-                            <input placeholder="Masukkan kata sandi" className=' mt-2 py-5 px-3 w-full h-5 bg-white rounded-xl border border-lightgrey justify-between items-center focus:outline-none focus:border-lightgrey border-md placeholder:italic' />
+                            <input placeholder="Masukkan kata sandi"
+                                type='password'
+                                className=' mt-2 py-5 px-3 w-full h-5 bg-white rounded-xl border border-lightgrey justify-between items-center focus:outline-none focus:border-lightgrey border-md placeholder:italic' />
                         </div>
                         <div className="w-5"></div>
                         <div className="mt-5 w-1/2">
                             <p className="text-3xs font-semibold ml-2 ">Verifikasi kata Sandi</p>
-                            <input placeholder="Verifikasikan kata sandi" className='  mt-2 py-5 px-3 w-full h-5 bg-white rounded-xl border border-lightgrey justify-between items-center focus:outline-none focus:border-lightgrey border-md placeholder:italic' />
+                            <input placeholder="Verifikasikan kata sandi"
+                                type='password'
+                                className='  mt-2 py-5 px-3 w-full h-5 bg-white rounded-xl border border-lightgrey justify-between items-center focus:outline-none focus:border-lightgrey border-md placeholder:italic' />
                         </div>
                     </div>
                     <div className="mt-6 " >
