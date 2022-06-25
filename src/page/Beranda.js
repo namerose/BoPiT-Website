@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import Navbar from "../component/Navbar"
+import Footer from '../component/Footer'
+
 import backgroundBeranda from "../assets/image/backgroundBeranda.png"
 import worldPerson from "../assets/image/worldPerson.jpg"
 import BopitAppScreen from "../assets/image/BopitAppScreen.png"
@@ -167,6 +169,7 @@ function Beranda() {
                     </SwiperSlide>
                 </Swiper>
             </div>
+            <Footer />
         </div>
     )
 }
