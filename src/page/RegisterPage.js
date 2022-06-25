@@ -11,7 +11,7 @@ function RegisterPage() {
 
     return (
         <div className='w-full h-screen grid grid-cols-2'>
-            <div onClick={() => navigate(-1)} className='absolute top-14 left-14'>
+            <div onClick={() => navigate(-1)} className='absolute top-8 left-10'>
                 <ArrowLeft />
             </div>
             <div className="place-self-center">

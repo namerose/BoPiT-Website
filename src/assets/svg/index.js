@@ -50,7 +50,7 @@ const SquareDot = (props) => (
 
 const ArrowLeft = (props) => (
     <svg
-        width={55}
+        width={35}
         height={43}
         viewBox="0 0 55 43"
         fill="none"
