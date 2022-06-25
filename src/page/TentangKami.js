@@ -7,6 +7,8 @@ import backgroundBeranda from "../assets/image/backgroundBeranda.png"
 import logoGKM from '../assets/image/LogoGKM.png'
 import worldMap from '../assets/image/WorldMap.png'
 
+import TypeAnimation from 'react-type-animation';
+
 function TentangKami() {
     useEffect(() => {
         document.title = "Tentang kami | BoPiT";
@@ -19,9 +21,12 @@ function TentangKami() {
             <div className="w-full h-screen bg-cover bg-no-repeat" style={{
                 backgroundImage: `url(${backgroundBeranda})`
             }}>
-                <div class="h-screen text-6xl flex justify-center items-center text-white font-bold">
-                    Harapan yang berasal dari hati
-                </div>
+                <TypeAnimation
+                    cursor={true}
+                    sequence={['Harapan yang berasal dari hati.']}
+                    wrapper="div"
+                    className='h-screen text-6xl flex justify-center items-center text-white font-bold'
+                />
             </div>
             <div className="w-full h-screen relative">
                 <div className="items-center justify-center mx-32">
@@ -33,7 +38,7 @@ function TentangKami() {
                     </div>
                 </div>
                 <div className='absolute bottom-0 -z-10 flex justify-center'>
-                    <img src={peopleGraduate} className="w-8/12" />
+                    <img src={peopleGraduate} className="w-6/12" alt='people-graduate' />
                 </div>
             </div>
             <div className="w-full h-screen bg-dark relative">
