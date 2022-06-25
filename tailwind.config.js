@@ -14,7 +14,6 @@ module.exports = {
         'purple-light': '#BA7CFA',
         'yellow-light': '#F8F280',
         'orange-light': '#E8976E',
-
       },
       width: {
         'middle': '45%',
