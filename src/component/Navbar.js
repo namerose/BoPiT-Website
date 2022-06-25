@@ -16,25 +16,23 @@ function Navbar({ page = 'beranda' }) {
 
     const activeLink = 'text-white underline underline-offset-8'
     return (
-        <div className={`fixed h-28 w-full overflow-hidden ease-in transition-colors z-50 ${colorNav ? 'bg-dark' : ''}`}>
-            <nav className="flex justify-between items-center m-auto h-full px-60">
-                <a href="#">
-                    <img src={colorNav ? LogoBerwarna : Logo} className="w-28" />
-                </a>
+        <div className={`fixed h-20 w-full overflow-hidden ease-in transition-colors z-50 ${colorNav ? 'bg-dark' : ''}`}>
+            <nav className="flex justify-between items-center m-auto h-full px-48">
+                <img src={colorNav ? LogoBerwarna : Logo} className="w-20" alt='' />
                 <ul className="flex">
-                    <li className="p-4 text-xl">
-                        <Link to='/' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'beranda' ? activeLink : 'text-light'}`}>Beranda</Link>
+                    <li className="p-4 text-md">
+                        <Link to='/' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page === 'beranda' ? activeLink : 'text-light'}`}>Beranda</Link>
                     </li>
-                    <li className="p-4 text-xl">
-                        <Link to='/tentang-kami' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'tentang-kami' ? activeLink : 'text-light'}`}>Tentang Kami</Link>
+                    <li className="p-4 text-md">
+                        <Link to='/tentang-kami' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page === 'tentang-kami' ? activeLink : 'text-light'}`}>Tentang Kami</Link>
                     </li>
-                    <li className="p-4 text-xl">
-                        <Link to='/produk' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'produk' ? activeLink : 'text-light'}`}>Produk</Link>
+                    <li className="p-4 text-md">
+                        <Link to='/produk' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page === 'produk' ? activeLink : 'text-light'}`}>Produk</Link>
                     </li>
-                    <li className="p-4 text-xl">
-                        <Link to='/hubungi-kami' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page == 'hubungi-kami' ? activeLink : 'text-light'}`}>Hubungi Kami</Link>
+                    <li className="p-4 text-md">
+                        <Link to='/hubungi-kami' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page === 'hubungi-kami' ? activeLink : 'text-light'}`}>Hubungi Kami</Link>
                     </li>
-                    <li className="p-4 text-xl">
+                    <li className="p-4 text-md">
                         <Link to='/login' className={`font-bold transition-all text-light border-2 p-3 rounded-xl hover:text-white hover:border-white border-light`}>Masuk / Daftar</Link>
                     </li>
                 </ul>
