@@ -3,9 +3,9 @@ import LogoBerwarna from '../assets/image/LogoBerwarna.png'
 import DownloadAppStore from '../assets/image/DownloadAppStore.png'
 import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer({ space = false }) {
     return (
-        <div className='w-full bg-dark pt-0 p-20'>
+        <div className={`w-full bg-dark pt-0 p-20 ${space ? 'pt-14' : 'pt-0'}`}>
             <img src={LogoBerwarna} alt='logo' className='h-20' />
             <div className='grid grid-cols-3'>
                 <div>
