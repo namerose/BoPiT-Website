@@ -1,5 +1,5 @@
 import React from 'react'
-import backgroundBeranda from "../../assets/image/backgroundBeranda.png"
+import backgroundBeranda from "../../assets/image/background/Beranda.png"
 import { motion } from "framer-motion"
 
 function BerandaTitle() {
@@ -9,7 +9,7 @@ function BerandaTitle() {
         }}>
             <motion.div
                 animate={{ paddingTop: 0, opacity: 1 }}
-                transition={{ type: "spring", duration: 3 }}
+                transition={{ type: "spring", duration: 2 }}
                 className="h-screen text-8xl leading-tight grid content-center text-white font-bold ml-36 pt-80 opacity-0">
                 Ubah masa<br /> depan bumi,<br /> dengan kami!
             </motion.div>

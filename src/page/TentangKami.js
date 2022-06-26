@@ -1,13 +1,15 @@
+// Import components
 import React, { useEffect } from 'react'
 import Navbar from '../component/Navbar'
 import Footer from '../component/Footer'
+import TypeAnimation from 'react-type-animation';
 
+// Import assets
 import peopleGraduate from '../assets/image/peopleGraduate.png'
-import backgroundBeranda from "../assets/image/backgroundBeranda.png"
+import backgroundBeranda from "../assets/image/background/Beranda.png"
 import logoGKM from '../assets/image/LogoGKM.png'
 import worldMap from '../assets/image/WorldMap.png'
 
-import TypeAnimation from 'react-type-animation';
 
 function TentangKami() {
     useEffect(() => {
@@ -25,7 +27,7 @@ function TentangKami() {
                     cursor={true}
                     sequence={['Harapan yang berasal dari hati.']}
                     wrapper="div"
-                    className='h-screen text-6xl flex justify-center items-center text-white font-bold'
+                    className='h-screen w-full text-6xl flex justify-center items-center text-white font-bold'
                 />
             </div>
             <div className="w-full h-screen relative">
@@ -47,7 +49,7 @@ function TentangKami() {
                         Dari Indonesia, untuk dunia
                     </div>
                     <div className='w-full flex items-center justify-center pt-10'>
-                        <img src={worldMap} className="w-middle" />
+                        <img src={worldMap} className="w-3/5" />
                     </div>
                     <div className="text-center text-2xl pt-10 text-white">
                         Saat ini, client kami tersebar di lebih dari 20 negara
@@ -79,8 +81,8 @@ function TentangKami() {
                         <div class="flex p-10 w-1/2 h-72 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center mx-12">
                             <img src={logoGKM} className='h-40' />
                             <div className='px-8'>
-                                <p className='text-3xl font-extrabold mb-3'>Juara 2</p>
-                                <p class="text-xl font-normal text-gray-700 dark:text-gray-400">Gelar Karya Mahasiswa Universitas Amikom Yogyakarta dalam bidang Hardware dan IoT.</p>
+                                <p className='text-3xl font-extrabold mb-3'>Gelar Karya Mahasiswa</p>
+                                <p class="text-xl font-normal text-gray-700 dark:text-gray-400">Peringkat 2 dalam lomba Gelar Karya Mahasiswa Universitas Amikom Yogyakarta dalam bidang Hardware dan IoT.</p>
                             </div>
                         </div>
                     </div>
