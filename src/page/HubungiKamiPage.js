@@ -39,7 +39,7 @@ function ContactUsPage() {
                             <div className='justify-center'>
                                 <LocationIcon className='inline mr-3' />
                                 <div className="text-2xl font-extrabold pt-12 inline">
-                                    Alamat kami:
+                                    Kantor kami:
                                 </div>
                             </div>
                             <div className="mt-2">
@@ -54,7 +54,7 @@ function ContactUsPage() {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer space />
         </div>
     )
 }

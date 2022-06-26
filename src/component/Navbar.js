@@ -30,6 +30,9 @@ function Navbar({ page = 'beranda' }) {
                         <Link to='/produk' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page === 'produk' ? activeLink : 'text-light'}`}>Produk</Link>
                     </li>
                     <li className="p-4 text-md">
+                        <Link to='/bantuan' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page === 'bantuan' ? activeLink : 'text-light'}`}>Bantuan</Link>
+                    </li>
+                    <li className="p-4 text-md">
                         <Link to='/hubungi-kami' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page === 'hubungi-kami' ? activeLink : 'text-light'}`}>Hubungi Kami</Link>
                     </li>
                     <li className="p-4 text-md">
