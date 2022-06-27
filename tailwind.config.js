@@ -20,6 +20,7 @@ module.exports = {
         'status-true': '#1FFF0D',
         'status-false': '#FF0D0D',
         'white-menu': '#f0f0f0',
+        'green-dashboard': '#00C39A',
       },
       width: {
         'middle': '45%',
