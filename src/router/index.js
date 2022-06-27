@@ -9,8 +9,9 @@ import HelpPage from '../page/Bantuan'
 import BerandaPage from '../page/BerandaPage'
 
 import Beranda from 'page/Dashboard/Beranda'
-import Pernagkat from 'page/Dashboard/Pernagkat'
+import Perangkat from 'page/Dashboard/Perangkat'
 import Pengaturan from 'page/Dashboard/Pengaturan'
+import AddDevice from 'page/Dashboard/AddDevice'
 
 function Router() {
   return (
@@ -23,8 +24,9 @@ function Router() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/dashboard" element={<Beranda />} />
-      <Route path='/dashboard/perangkat' element={<Pernagkat />} />
+      <Route path='/dashboard/perangkat' element={<Perangkat />} />
       <Route path='/dashboard/pengaturan' element={<Pengaturan />} />
+      <Route path='/dashboard/add-device' element={<AddDevice />} />
     </Routes>
   )
 }

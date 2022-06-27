@@ -42,29 +42,29 @@ function FiturPerangkat() {
                     </Animated.FromDirection>
                 </div>
                 <Animated.FadeIn animate={controls} custom={0} delay={0.2}>
-                    <div class="flex p-10 max-w-md h-52 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center">
+                    <div className="flex p-10 max-w-md h-52 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center">
                         <img src={Humidity} className='h-32' alt='' />
                         <div className='px-8'>
                             <p className='text-lg font-semibold mb-3'>Kelembaban</p>
-                            <p class="font-normal text-gray-700 dark:text-gray-400">Pemantauan kelembaban udara dan tanah </p>
+                            <p className="font-normal text-gray-700 dark:text-gray-400">Pemantauan kelembaban udara dan tanah </p>
                         </div>
                     </div>
                 </Animated.FadeIn>
                 <Animated.FadeIn animate={controls} custom={1} delay={0.2}>
-                    <div class="flex p-10 max-w-md h-52 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center mx-12">
+                    <div className="flex p-10 max-w-md h-52 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center mx-12">
                         <img src={Temperature} className='h-32' alt='' />
                         <div className='px-8'>
                             <p className='text-lg font-semibold mb-3'>Suhu</p>
-                            <p class="font-normal text-gray-700 dark:text-gray-400">Pemantauan suhu udara dan tanah </p>
+                            <p className="font-normal text-gray-700 dark:text-gray-400">Pemantauan suhu udara dan tanah </p>
                         </div>
                     </div>
                 </Animated.FadeIn>
                 <Animated.FadeIn animate={controls} custom={2} delay={0.2}>
-                    <div class="flex p-10 max-w-md h-52 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center">
+                    <div className="flex p-10 max-w-md h-52 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center">
                         <img src={WaterDrop} className='h-32' alt='water' />
                         <div className='px-8'>
                             <p className='text-lg font-semibold mb-3'>Penyiraman</p>
-                            <p class="font-normal text-gray-700 dark:text-gray-400">Pemantauan aktifitas penyiraman tanaman </p>
+                            <p className="font-normal text-gray-700 dark:text-gray-400">Pemantauan aktifitas penyiraman tanaman </p>
                         </div>
                     </div>
                 </Animated.FadeIn>

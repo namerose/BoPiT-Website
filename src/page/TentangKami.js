@@ -36,7 +36,7 @@ function TentangKami() {
                         Semuanya berawal ketika GKM
                     </div>
                     <div className="text-justify text-2xl pt-12">
-                        Berawal mengikuti lomba Gelar Karya Mahasiswa (GKM) Universitas Amikom Yogyakarta dengan tema yang kami bawa yaitu sebuah penyiram tanaman otomatis. Membuat kami terpikir untuk mencoba memasarkan produk pertama kami, yaitu penyiram tanaman otomatis, yang kemudian menjadi cikal bakal perusahaan.
+                        Berawal mengikuti lomba Gelar Karya Mahasiswa (GKM) Universitas Amikom Yogyakarta dengan tema yang kami bawa yaitu sebuah penyiram tanaman otomatis. Membuat kami terpikir untuk mencoba memasarkan produk pertama kami, penyiram tanaman otomatis yang kami beri nama Bot Penyiram Tanaman (BoPiT), yang kemudian menjadi cikal bakal perusahaan.
                     </div>
                 </div>
                 <div className='absolute bottom-0 -z-10 flex justify-center'>
@@ -78,11 +78,11 @@ function TentangKami() {
                         Penghargaan
                     </div>
                     <div className='flex justify-center pt-20'>
-                        <div class="flex p-10 w-1/2 h-72 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center mx-12">
+                        <div className="flex p-10 w-1/2 h-72 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl hover:scale-105 transition-all justify-between items-center mx-12">
                             <img src={logoGKM} className='h-40' />
                             <div className='px-8'>
                                 <p className='text-3xl font-extrabold mb-3'>Gelar Karya Mahasiswa</p>
-                                <p class="text-xl font-normal text-gray-700 dark:text-gray-400">Peringkat 2 dalam lomba Gelar Karya Mahasiswa Universitas Amikom Yogyakarta dalam bidang Hardware dan IoT.</p>
+                                <p className="text-xl font-normal text-gray-700 dark:text-gray-400">Peringkat 2 dalam lomba Gelar Karya Mahasiswa Universitas Amikom Yogyakarta dalam bidang Hardware dan IoT.</p>
                             </div>
                         </div>
                     </div>

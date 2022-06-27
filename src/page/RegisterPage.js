@@ -91,7 +91,7 @@ function RegisterPage() {
                     </div>
                     <div className="mt-6 " >
                         <div onClick={handleRegister} className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 rounded-2xl w-xl cursor-pointer">
-                            <p class="font-normal text-white dark:text-white-400 text-center" >Daftar</p>
+                            <p className="font-normal text-white dark:text-white-400 text-center" >Daftar</p>
                         </div>
                     </div>
                     <div className="mt-5 flex justify-center">
