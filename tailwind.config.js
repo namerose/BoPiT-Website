@@ -14,6 +14,9 @@ module.exports = {
         'purple-light': '#BA7CFA',
         'yellow-light': '#F8F280',
         'orange-light': '#E8976E',
+        'dark-sidebar': '#121418',
+        'dark-content': '#1B1F24',
+        'white-menu': '#f0f0f0',
       },
       width: {
         'middle': '45%',
