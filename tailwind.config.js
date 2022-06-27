@@ -16,6 +16,9 @@ module.exports = {
         'orange-light': '#E8976E',
         'dark-sidebar': '#121418',
         'dark-content': '#1B1F24',
+        'content-status': '#4B5663',
+        'status-true': '#1FFF0D',
+        'status-false': '#FF0D0D',
         'white-menu': '#f0f0f0',
       },
       width: {

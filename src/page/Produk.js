@@ -27,7 +27,7 @@ function Produk() {
                 </motion.div>
             </div>
             <div className="w-full h-screen grid grid-cols-2">
-                <div className='h-screen grid grid-rows-2 content-between pt-20 pl-10'>
+                <div className='h-screen pt-20 pl-10'>
                     <img src={produkFront} className="w-2/4 justify-self-center" alt='' />
                     <div>
                         <div className="text-2xl">
