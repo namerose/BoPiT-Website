@@ -5,6 +5,7 @@ import { BiLogOut } from "react-icons/bi";
 import { IoTvOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import { logout } from '../firebase';
+
 function Sidebar({ children, page = 'beranda' }) {
 
     const logOut = () => {
