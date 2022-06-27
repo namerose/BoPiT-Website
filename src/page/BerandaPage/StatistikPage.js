@@ -31,7 +31,7 @@ function StatistikPage() {
             </div>
             <div className='flex flex-wrap justify-center mt-44'>
                 <Animated.FromDirection from='left' animate={controls} custom={0} delay={1}>
-                    <div class="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-green-light rounded-3xl shadow-sm shadow-green-light mx-6">
+                    <div className="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-green-light rounded-3xl shadow-sm shadow-green-light mx-6">
                         <Animated.FadeIn animate={controls} custom={1} delay={1}>
                             <img src={IotIC} className='h-24 -mt-12' alt='ic' />
                         </Animated.FadeIn>
@@ -40,7 +40,7 @@ function StatistikPage() {
                     </div>
                 </Animated.FromDirection>
                 <Animated.FromDirection from='top' animate={controls} custom={0} delay={1}>
-                    <div class="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-purple-light rounded-3xl shadow-sm shadow-green-light mx-6">
+                    <div className="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-purple-light rounded-3xl shadow-sm shadow-green-light mx-6">
                         <Animated.FadeIn animate={controls} custom={1} delay={1}>
                             <img src={peopleHandphone} className='h-24 -mt-12' alt='people' />
                         </Animated.FadeIn>
@@ -49,7 +49,7 @@ function StatistikPage() {
                     </div>
                 </Animated.FromDirection>
                 <Animated.FromDirection from='bottom' animate={controls} custom={0} delay={1}>
-                    <div class="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-yellow-light rounded-3xl shadow-sm shadow-green-light mx-6">
+                    <div className="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-yellow-light rounded-3xl shadow-sm shadow-green-light mx-6">
                         <Animated.FadeIn animate={controls} custom={1} delay={1}>
                             <img src={peopleCut} className='h-24 -mt-12' alt='people' />
                         </Animated.FadeIn>
@@ -58,7 +58,7 @@ function StatistikPage() {
                     </div>
                 </Animated.FromDirection>
                 <Animated.FromDirection from='right' animate={controls} custom={0} delay={1}>
-                    <div class="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-orange-light rounded-3xl shadow-sm shadow-green-light mx-6">
+                    <div className="flex flex-col text-center p-10 pt-0 max-w-lg h-72 bg-orange-light rounded-3xl shadow-sm shadow-green-light mx-6">
                         <Animated.FadeIn animate={controls} custom={1} delay={1}>
                             <img src={waterWorld} className='h-24 -mt-12' alt='foto water' />
                         </Animated.FadeIn>

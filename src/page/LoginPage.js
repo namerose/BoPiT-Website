@@ -10,6 +10,7 @@ function LoginPage() {
     const [password, setPassword] = useState();
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate();
+    const [isError, setError] = useState(false);
 
     useEffect(() => {
         document.title = "Masuk | BoPiT"
@@ -68,7 +69,7 @@ function LoginPage() {
                         <div
                             onClick={handleLogin}
                             className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 rounded-2xl w-xl cursor-pointer">
-                            <p class="font-normal text-white dark:text-white-400 text-center" >Masuk</p>
+                            <p className="font-normal text-white dark:text-white-400 text-center" >Masuk</p>
                         </div>
                     </div>
                     <div className="mt-5 flex justify-center">

@@ -31,9 +31,9 @@ function HorrisonFordPage() {
                         <p className='text-white px-12 text-4xl'>"Sederhananya, jika kita tidak melindungi alam, kita tidak bisa melindungi diri kita sendiri."</p>
                     </Animated.Reveal>
                 </Animated.FromDirection>
-                <p className='font-semibold text-white text-2xl float-right mt-7'>
+                <div className='font-semibold text-white text-2xl float-right mt-7'>
                     <Animated.Letter text='~ Harrison Ford (2018)' animate={controls} custom={1} delay={1} />
-                </p>
+                </div>
             </div>
         </div>
     )
