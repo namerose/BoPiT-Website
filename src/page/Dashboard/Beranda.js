@@ -4,7 +4,7 @@ import AirHumidity from '../../assets/image/AirHumidity.png';
 import LandHumidity from '../../assets/image/LandHumidity.png';
 import AirTemperature from '../../assets/image/AirTemperature.png';
 import importLandTemperature from '../../assets/image/LandTemperature.png';
-import { getChartData, getSensorData } from '../../firebase';
+import { auth, getChartData, getSensorData } from '../../firebase';
 import Chart from '../../component/Chart';
 
 import {
@@ -17,6 +17,8 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 
 ChartJS.register(
     CategoryScale,
@@ -31,11 +33,17 @@ function Beranda() {
     const [sensor, setSensor] = useState({});
     const [label, setLabel] = useState([]);
     const [dataLabel, setDataLabel] = useState([]);
+    const [user] = useAuthState(auth);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.title = "Dashboard";
+        
+        if (!user) navigate("/login");
+
         configureData();
-    }, []);
+    }, [navigate, user, sensor, label, dataLabel]);
 
     const configureData = () => {
         const label = [];
