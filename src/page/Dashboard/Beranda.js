@@ -49,7 +49,7 @@ function Beranda() {
         const label = [];
         const dataLabel = [];
         const chartData = getChartData();
-        console.log(chartData);
+        
         chartData.forEach(item => {
             label.push(item.label);
             dataLabel.push(item.data);

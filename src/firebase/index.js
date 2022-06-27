@@ -96,6 +96,24 @@ const getChartData = () => {
     return data;
 };
 
+const getDevices = () => {
+    const dbRef = ref(database, "Devices/");
+    let data = [];
+    onValue(dbRef, (snapshot) => {
+        const dataFromFirebase = snapshot.val();
+        Object.keys(dataFromFirebase).forEach(function (key) {
+            data.push({
+                name: dataFromFirebase[key].name,
+                status: dataFromFirebase[key].status,
+                id: key,
+            });
+        }
+        );
+    }
+    );
+    return data;
+}
+
 export {
     auth,
     db,
@@ -105,4 +123,5 @@ export {
     logout,
     getSensorData,
     getChartData,
+    getDevices,
 }

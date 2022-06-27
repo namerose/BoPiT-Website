@@ -1,11 +1,25 @@
 import Sidebar from 'component/Sidebar'
 import React from 'react'
 import { AiOutlinePlus } from "react-icons/ai";
-import { Link } from 'react-router-dom';
-import { BsTrashFill } from "react-icons/bs";
-import Device from '../../component/Device.js'
+import { Link, useNavigate } from 'react-router-dom';
+import { ref, set } from "firebase/database";
+import { database } from '../../firebase';
 
 function AddDevice() {
+
+    const [deviceName, setDeviceName] = React.useState('');
+    const [deviceId, setDeviceId] = React.useState('');
+    const navigate = useNavigate();
+
+    const handleDevice = () => {
+        set(ref(database, 'Devices/' + deviceId), {
+            name: deviceName,
+            id: deviceId,
+            status: Math.random() < 0.5
+        });
+
+        navigate('/dashboard/perangkat');
+    }
 
     return (
         <>
@@ -26,6 +40,8 @@ function AddDevice() {
                             <div className="mt-5 mx-5">
                                 <p className="text-3xs font-semibold ml-2 ">Nama perangkat</p>
                                 <input
+                                    value={deviceName}
+                                    onChange={(e) => setDeviceName(e.target.value)}
                                     placeholder="Nama perangkat"
                                     className='mt-2 py-5 px-3 w-full h-5 text-white bg-dark-content rounded-xl border border-lightgrey justify-between items-center focus:outline-none focus:border-md placeholder:italic'
                                 />
@@ -33,18 +49,18 @@ function AddDevice() {
                             <div className="mt-5 mx-5">
                                 <p className="text-3xs font-semibold ml-2 ">Id perangkat</p>
                                 <input
+                                    value={deviceId}
+                                    onChange={(e) => setDeviceId(e.target.value)}
                                     placeholder="Id perangkat"
                                     className='mt-2 py-5 px-3 w-full h-5 text-white bg-dark-content rounded-xl border border-lightgrey justify-between items-center focus:outline-none focus:border-md placeholder:italic'
                                 />
                             </div>
                             <div className="mt-6 flex justify-end mr-5" >
-                                {/* <div
-                                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-3 w-28 rounded-2xl cursor-pointer mr-5"> */}
                                 <Link to='/dashboard/perangkat' className={`cursor-pointer flex justify-center bg-red-500 hover:bg-red-700 text-white font-bold py-3 w-28 mr-5  rounded-2xl`}>
                                     <p className="font-normal text-white dark:text-white-400" >Batal</p>
                                 </Link>
-                                {/* </div> */}
                                 <div
+                                    onClick={handleDevice}
                                     className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 w-28 rounded-2xl cursor-pointer">
                                     <p className="font-normal text-white dark:text-white-400 text-center " >Tambah</p>
                                 </div>
