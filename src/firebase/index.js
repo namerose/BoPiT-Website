@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getDatabase, ref, onValue } from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAcAA8AFULWacjgHkBlp8alL0Ly8JvLsZM",
@@ -15,6 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const database = getDatabase(app);
 
 const logInWithEmailAndPassword = async (email, password) => {
     try {
@@ -55,10 +57,27 @@ const logout = () => {
     signOut(auth);
 };
 
+const getSensorData = () => {
+    const dbRef = ref(database, "SensorData/");
+    let data = {}
+    onValue(dbRef, (snapshot) => {
+        const dataFromFirebase = snapshot.val();
+        data = {
+            kelembabanTanah: dataFromFirebase.SoilMoisture,
+            suhuTanah: dataFromFirebase.SoilTemperature,
+            kelembabanUdara: dataFromFirebase.AirHumidity,
+            suhuUdara: dataFromFirebase.AirTemperature,
+        }
+    });
+    return data;
+}
+
 export {
     auth,
     db,
+    database,
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     logout,
+    getSensorData,
 }
