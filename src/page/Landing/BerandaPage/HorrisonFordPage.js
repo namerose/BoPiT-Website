@@ -2,7 +2,7 @@ import Animated from 'component/animation';
 import { useAnimation } from 'framer-motion';
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
-import HarrisonFord from '../../assets/image/HarrisonFord.jpg'
+import HarrisonFord from '../../../assets/image/HarrisonFord.jpg'
 
 function HorrisonFordPage() {
     const controls = useAnimation();

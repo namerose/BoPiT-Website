@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Animated from 'component/animation'
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import peopleGraduate from '../../assets/image/peopleGraduate.png'
+import peopleGraduate from '../../../assets/image/peopleGraduate.png'
 
 function BerawalGKM() {
     const controls = useAnimation();

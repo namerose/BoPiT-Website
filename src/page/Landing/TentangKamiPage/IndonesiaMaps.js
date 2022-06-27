@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Animated from 'component/animation';
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import worldMap from '../../assets/image/WorldMap.png'
+import worldMap from '../../../assets/image/WorldMap.png'
 
 function IndonesiaMaps() {
     const controls = useAnimation();

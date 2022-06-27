@@ -1,6 +1,6 @@
 import Footer from 'component/Footer';
 import React, { useEffect } from 'react'
-import Navbar from '../../component/Navbar'
+import Navbar from '../../../component/Navbar'
 import AplikasiBopit from './AplikasiBopit';
 import FiturPerangkat from './FiturPerangkat';
 import HorrisonFordPage from './HorrisonFordPage';

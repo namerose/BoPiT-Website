@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import Factory from '../../assets/image/Factory.jpg'
-import SandArid from '../../assets/image/SandArid.jpg'
-import RainforestEmergents from '../../assets/image/RainforestEmergents.jpg'
+import Factory from '../../../assets/image/Factory.jpg'
+import SandArid from '../../../assets/image/SandArid.jpg'
+import RainforestEmergents from '../../../assets/image/RainforestEmergents.jpg'
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Animated from 'component/animation';

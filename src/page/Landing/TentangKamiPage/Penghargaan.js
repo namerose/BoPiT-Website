@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import logoGKM from '../../assets/image/LogoGKM.png'
+import logoGKM from '../../../assets/image/LogoGKM.png'
 import Animated from 'component/animation';
 
 function Penghargaan() {

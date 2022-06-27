@@ -1,6 +1,6 @@
 import Footer from 'component/Footer';
 import React, { useEffect } from 'react'
-import Navbar from '../../component/Navbar'
+import Navbar from '../../../component/Navbar'
 import BerawalGKM from './BerawalGKM';
 import IndonesiaMaps from './IndonesiaMaps';
 import Inspirasi from './Inspirasi';

@@ -1,6 +1,6 @@
 import React from 'react'
 import TypeAnimation from 'react-type-animation';
-import backgroundBeranda from "../../assets/image/background/Beranda.png"
+import backgroundBeranda from "../../../assets/image/background/Beranda.png"
 
 function TittlePage() {
     return (
