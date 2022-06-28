@@ -12,13 +12,19 @@ function Chart({ chartData }) {
                     plugins: {
                         title: {
                             display: true,
-                            text: "Data Penyiraman"
+                            text: "Data Penyiraman",
+                            color: '#FFFFFF'
                         },
                         legend: {
                             display: true,
-                            position: "bottom"
+                            position: "bottom",
+                            fontColor: '#FFFFFF'
+                        },
+                        subtitle: {
+                            display: true,
+                            text: 'Custom Chart Subtitle'
                         }
-                    }
+                    },
                 }}
             />
         </div>
