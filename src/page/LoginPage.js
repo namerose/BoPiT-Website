@@ -18,12 +18,16 @@ function LoginPage() {
         if (loading) {
             return;
         }
+
     }, [user, loading, navigate]);
 
     const handleLogin = () => {
         logInWithEmailAndPassword(email, password)
             .then((res) => {
                 setResponse(res);
+                if (res.success) {
+                    navigate('/dashboard');
+                }
             }).catch(err => {
                 console.log(err);
             })

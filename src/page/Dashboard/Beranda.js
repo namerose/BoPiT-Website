@@ -33,17 +33,21 @@ function Beranda() {
     const [sensor, setSensor] = useState({});
     const [label, setLabel] = useState([]);
     const [dataLabel, setDataLabel] = useState([]);
-    const [user] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
 
     const navigate = useNavigate();
 
     useEffect(() => {
         document.title = "Dashboard";
 
+        if (loading) {
+            return;
+        }
+
         if (!user) navigate("/login");
 
         configureData();
-    }, [navigate, user, sensor, label, dataLabel]);
+    }, [navigate, user, loading, sensor, label, dataLabel]);
 
     const configureData = () => {
         const label = [];

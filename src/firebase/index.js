@@ -25,12 +25,13 @@ const logInWithEmailAndPassword = async (email, password) => {
     try {
         const res = await signInWithEmailAndPassword(auth, email, password);
         if (!res.user.emailVerified) {
+            signOut(auth);
             return {
                 success: false,
-                message: "Pos-el atau belum ter-verifikasi!",
+                message: "Pos-el belum ter-verifikasi!",
             };
         };
-        return {success: true}
+        return { success: true }
     } catch (err) {
         if (err.code === 'auth/wrong-password') {
             return {
