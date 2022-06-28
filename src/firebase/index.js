@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendEmailVerification } from "firebase/auth";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { getDatabase, ref, onValue } from "firebase/database";
 import moment from 'moment'
@@ -23,9 +23,14 @@ const database = getDatabase(app);
 
 const logInWithEmailAndPassword = async (email, password) => {
     try {
-        await signInWithEmailAndPassword(auth, email, password);
+        const res = await signInWithEmailAndPassword(auth, email, password);
+        if (!res.user.emailVerified) {
+            return {
+                success: false,
+                message: "Pos-el atau belum ter-verifikasi!",
+            };
+        };
     } catch (err) {
-        console.log(err.code)
         if (err.code === 'auth/wrong-password') {
             return {
                 success: false,
@@ -56,6 +61,7 @@ const registerWithEmailAndPassword = async (name, username, email, password) => 
             authProvider: "local",
             email,
         });
+        sendEmailVerification(res.user);
     } catch (err) {
         return {
             success: false,

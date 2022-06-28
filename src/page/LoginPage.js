@@ -18,7 +18,7 @@ function LoginPage() {
         if (loading) {
             return;
         }
-        if (user) navigate("/dashboard");
+        // if (user) navigate("/dashboard");
     }, [user, loading, navigate]);
 
     const handleLogin = () => {
