@@ -39,7 +39,7 @@ function Beranda() {
 
     useEffect(() => {
         document.title = "Dashboard";
-        
+
         if (!user) navigate("/login");
 
         configureData();
@@ -49,7 +49,7 @@ function Beranda() {
         const label = [];
         const dataLabel = [];
         const chartData = getChartData();
-        
+
         chartData.forEach(item => {
             label.push(item.label);
             dataLabel.push(item.data);
@@ -66,11 +66,11 @@ function Beranda() {
             {
                 label: 'Total Penyiraman',
                 data: dataLabel,
-                backgroundColor: 'rgb(0, 195, 154)',
-                borderWidth: 1,
-                borderColor: 'rgb(0, 195, 154)',
+                backgroundColor: 'rgb(80, 201, 255)',
+                borderWidth: 2,
+                borderColor: 'rgb(80, 201, 255)',
             }
-        ]
+        ],
     }
 
     return (
@@ -107,7 +107,7 @@ function Beranda() {
                     </div>
                 </div>
                 <div className='w-full flex flex-col justify-center items-center'>
-                    <div className='bg-white rounded-md flex flex-col justify-center items-center p-8 w-11/12 mt-10'>
+                    <div className='bg-content-status rounded-md flex flex-col justify-center items-center p-8 w-11/12 mt-10 text-white'>
                         <Chart chartData={data} />
                     </div>
                 </div>

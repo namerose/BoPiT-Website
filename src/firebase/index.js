@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { getDatabase, ref, onValue } from "firebase/database";
 import moment from 'moment'
@@ -68,6 +68,15 @@ const logout = () => {
     signOut(auth);
 };
 
+const forgotPassword = (email) => {
+    sendPasswordResetEmail(auth, email)
+        .then(function () {
+            alert('Link penggantian password telah dikirimkan!, harap cek email anda')
+        }).catch(function (e) {
+            console.log(e)
+        })
+}
+
 const getSensorData = () => {
     const dbRef = ref(database, "SensorData/");
     let data = {}
@@ -132,4 +141,5 @@ export {
     getSensorData,
     getChartData,
     getDevices,
+    forgotPassword,
 }
