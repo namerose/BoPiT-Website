@@ -48,7 +48,7 @@ function ContactUsPage() {
                         </div>
                         <div className="-mt-40 ml-6">
                             <div className="gmap_canvas">
-                                <iframe width="600" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=amikom%20yogyakarta&t=&z=17&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+                                <iframe title='maps' width="600" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=amikom%20yogyakarta&t=&z=17&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
                             </div>
                         </div>
                     </div>
