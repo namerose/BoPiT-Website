@@ -48,9 +48,9 @@ function LoginPage() {
                 </div>
                 <div className="border-gray-light border-2 shadow-md rounded-xl p-4 mt-5">
                     {!response.success && (
-                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                            <strong class="font-bold">Gagal </strong>
-                            <span class="block sm:inline">{response.message}</span>
+                        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                            <strong className="font-bold">Gagal </strong>
+                            <span className="block sm:inline">{response.message}</span>
                         </div>
                     )}
                     <div className="mt-5">
