@@ -23,21 +23,21 @@ function Sidebar({ children, page = 'beranda' }) {
                                 <li>
                                     <Link to='/dashboard' className={`cursor-pointer flex items-center px-4 py-2 text-white-menu hover:bg-gray-200 rounded-md hover:text-dark-content  ${page === 'beranda' ? 'text-dark-content bg-gray-100' : ''}`}>
                                         <AiOutlineHome size={24} />
-                                        <span className="mx-4 font-medium ">Beranda</span>
+                                        <span className={`mx-4 ${page == "beranda" ? 'font-bold' : 'font-medium'}`}>Beranda</span>
                                     </Link>
                                 </li>
 
                                 <li>
                                     <Link to='/dashboard/perangkat' className={`cursor-pointer mt-2 flex items-center px-4 py-2 text-white-menu hover:bg-gray-200 rounded-md hover:text-dark-content  ${page === 'perangkat' ? 'text-dark-content bg-gray-100' : ''}`}>
                                         <IoTvOutline size={24} />
-                                        <span className="mx-4 font-medium ">Perangkat</span>
+                                        <span className={`mx-4 ${page == "perangkat" ? 'font-bold' : 'font-medium'}`}>Perangkat</span>
                                     </Link>
                                 </li>
 
                                 <li>
                                     <Link to='/dashboard/pengaturan' className={`cursor-pointer mt-2 flex items-center px-4 py-2 text-white-menu hover:bg-gray-200 rounded-md hover:text-dark-content  ${page === 'pengaturan' ? 'text-dark-content bg-gray-100' : ''}`}>
                                         <AiOutlineSetting size={24} />
-                                        <span className="mx-4 font-medium">Pengaturan</span>
+                                        <span className={`mx-4 ${page == "pengaturan" ? 'font-bold' : 'font-medium'}`}>Pengaturan</span>
                                     </Link>
                                 </li>
                             </ul>
