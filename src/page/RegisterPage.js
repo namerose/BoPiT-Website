@@ -4,6 +4,7 @@ import ImagePeople from '../assets/image/bunchofpeople.png'
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, registerWithEmailAndPassword } from '../firebase';
+import { validateEmail } from 'function';
 
 function RegisterPage() {
     const [name, setName] = useState();
@@ -11,22 +12,46 @@ function RegisterPage() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [confirmPassword, setConfirmPassword] = useState();
-    const [user, loading, error] = useAuthState(auth);
+    const [response, setResponse] = useState({ success: true });
+    const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
 
     useEffect(() => {
         document.title = "Daftar | BoPiT"
         if (loading) return;
         if (user) navigate("/dashboard");
-    }, [user, loading]);
+    }, [user, loading, navigate]);
 
     const handleRegister = () => {
-        registerWithEmailAndPassword(name, username, email, password)
-            .then((res) => {
-                console.log(res);
-            }).catch(err => {
-                console.log(err);
-            })
+        if (!name || !username || !email || !password) {
+            setResponse(
+                {
+                    success: false,
+                    message: "Harap isi semua kolom!",
+                }
+            )
+        } else if (!validateEmail(email)) {
+            setResponse(
+                {
+                    success: false,
+                    message: "Alamat Pos-el tidak valid!",
+                }
+            )
+        } else if (password !== confirmPassword) {
+            setResponse(
+                {
+                    success: false,
+                    message: "Verifikasi kata sandi tidak sama!",
+                }
+            )
+        } else {
+            registerWithEmailAndPassword(name, username, email, password)
+                .then((res) => {
+                    setResponse(res)
+                }).catch(err => {
+                    console.log(err);
+                })
+        }
     }
 
     return (
@@ -39,6 +64,12 @@ function RegisterPage() {
                     <div className='mt-10 text-3xl font-extrabold' >
                         Daftar akun baru
                     </div>
+                    {!response.success && (
+                        <div class="bg-red-100 border mt-4 border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                            <strong class="font-bold">Gagal </strong>
+                            <span class="block sm:inline">{response.message}</span>
+                        </div>
+                    )}
                     <div className="mt-5">
                         <p className="text-3xs font-semibold ml-2 ">Nama lengkap</p>
                         <input

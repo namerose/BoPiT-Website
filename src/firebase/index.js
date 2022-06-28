@@ -25,13 +25,18 @@ const logInWithEmailAndPassword = async (email, password) => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
     } catch (err) {
-        if (err.code === "auth/") {
+        console.log(err.code)
+        if (err.code === 'auth/wrong-password') {
             return {
                 success: false,
                 message: "Pos-el atau Kata sandi salah!",
             };
-        }
-        else {
+        } else if (err.code === 'auth/missing-email') {
+            return {
+                success: false,
+                message: "Harap isi kolom Pos-el!",
+            };
+        } else {
             return {
                 success: false,
                 message: "Terjadi kesalahan!",
@@ -52,7 +57,10 @@ const registerWithEmailAndPassword = async (name, username, email, password) => 
             email,
         });
     } catch (err) {
-        console.error(err);
+        return {
+            success: false,
+            message: err.code,
+        };
     }
 };
 

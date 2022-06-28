@@ -8,24 +8,23 @@ import { validateEmail } from '../function';
 function LoginPage() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
-    const [isError, setError] = useState(false);
+    const [response, setResponse] = useState({ success: true });
 
     useEffect(() => {
         document.title = "Masuk | BoPiT"
 
         if (loading) {
-            console.log('loading....');
             return;
         }
         if (user) navigate("/dashboard");
-    }, [user, loading]);
+    }, [user, loading, navigate]);
 
     const handleLogin = () => {
         logInWithEmailAndPassword(email, password)
             .then((res) => {
-                console.log(res);
+                setResponse(res);
             }).catch(err => {
                 console.log(err);
             })
@@ -42,6 +41,12 @@ function LoginPage() {
                     Masuk
                 </div>
                 <div className="border-gray-light border-2 shadow-md rounded-xl p-4 mt-5">
+                    {!response.success && (
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                            <strong class="font-bold">Gagal </strong>
+                            <span class="block sm:inline">{response.message}</span>
+                        </div>
+                    )}
                     <div className="mt-5">
                         <p className="text-3xs font-semibold ml-2 ">Alamat pos-el</p>
                         <input
