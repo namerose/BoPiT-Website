@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer";
 import Animated from 'component/animation';
-import BopitAppScreen from "../../assets/image/BopitAppScreen.png"
+import BopitAppScreen from "../../../assets/image/BopitAppScreen.png"
 
 function AplikasiBopit() {
     const controls = useAnimation();

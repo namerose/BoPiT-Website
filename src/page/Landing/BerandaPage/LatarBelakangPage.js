@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer";
 import Animated from 'component/animation';
-import worldPerson from "../../assets/image/worldPerson.jpg"
+import worldPerson from "../../../assets/image/worldPerson.jpg"
 
 function LatarBelakangPage() {
     const controls = useAnimation();

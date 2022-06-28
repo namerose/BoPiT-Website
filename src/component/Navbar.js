@@ -1,10 +1,14 @@
+import { auth } from '../firebase';
 import React, { useState } from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from "react-router-dom";
 import Logo from '../assets/image/Logo.png'
 import LogoBerwarna from '../assets/image/LogoBerwarna.png'
 
 function Navbar({ page = 'beranda' }) {
     const [colorNav, setColorNav] = useState(false);
+    const [user] = useAuthState(auth);
+
     const changeColorNav = () => {
         if (window.scrollY >= 100) {
             setColorNav(true);
@@ -36,7 +40,7 @@ function Navbar({ page = 'beranda' }) {
                         <Link to='/hubungi-kami' className={`font-bold transition-all hover:text-white hover:underline hover:underline-offset-8 ${page === 'hubungi-kami' ? activeLink : 'text-light'}`}>Hubungi Kami</Link>
                     </li>
                     <li className="p-4 text-md">
-                        <Link to='/login' className={`font-bold transition-all text-light border-2 p-3 rounded-xl hover:text-white hover:border-white border-light`}>Masuk / Daftar</Link>
+                        <Link to={user ? '/dashboard' : '/login'} className={`font-bold transition-all text-light border-2 p-3 rounded-xl hover:text-white hover:border-white border-light`}>{user ? 'Admin' : 'Masuk / Daftar'}</Link>
                     </li>
                 </ul>
             </nav>

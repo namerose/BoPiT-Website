@@ -1,5 +1,5 @@
 import React from 'react'
-import backgroundBeranda from "../../assets/image/background/Beranda.png"
+import backgroundBeranda from "../../../assets/image/background/Beranda.png"
 import { motion } from "framer-motion"
 
 function BerandaTitle() {

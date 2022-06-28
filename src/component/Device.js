@@ -1,7 +1,16 @@
+import { database, getDevices } from '../firebase';
 import React from 'react'
 import { BsTrashFill } from "react-icons/bs";
+import { ref, remove } from 'firebase/database';
 
-const Item = ({ name, status }) => (
+const handleDelete = (id) => {
+    const confirm = window.confirm('Apakah anda yakin ingin menghapus perangkat ini?');
+    if (confirm) {
+        remove(ref(database, 'Devices/' + id));
+    }
+}
+
+const Item = ({ id, name, status }) => (
     <div className='border-t-2 border-gray-500 flex justify-between items-center text-white py-1'>
         <div className='text-white text-lg ml-7'>
             {name}
@@ -12,36 +21,23 @@ const Item = ({ name, status }) => (
                     <div className='text-white text-xs font-light mx-3'>
                         {status ? 'Aktif' : 'Tidak Aktif'}
                     </div>
-                    <div className={`${status ?' bg-status-true' : 'bg-status-false'} rounded-full w-4 h-4 ml-1`}></div>
+                    <div className={`${status ? ' bg-status-true' : 'bg-status-false'} rounded-full w-4 h-4 ml-1`}></div>
                 </div>
-                <BsTrashFill size={20} />
+                <BsTrashFill size={20} onClick={() => handleDelete(id)} />
             </div>
         </div>
     </div>
 );
 
 export default function Device() {
-    const faqs = [
-        {
-            name: 'Kebun',
-            status: true,
-        },
-        {
-            name: 'Halaman Belakang',
-            status: false,
-        },
-        {
-            name: 'Halaman Depan',
-            status: true,
-        },
-        {
-            name: 'Halaman Depan',
-            status: true,
-        },
-    ];
+    const [devices, setDevices] = React.useState([]);
+    React.useEffect(() => {
+        setDevices(getDevices());;
+    }, [devices]);
+
     return (
-            <div className="overflow-hidden divide-y shadow-sm">
-                {faqs.map((item, key) => <Item name={item.name} status={item.status} key={key} />)}
-            </div>
+        <div className="overflow-hidden divide-y shadow-sm">
+            {devices.map((item, key) => <Item name={item.name} status={item.status} id={item.id} key={key} />)}
+        </div>
     );
 }

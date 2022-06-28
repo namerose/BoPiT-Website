@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { SquareDot } from '../../assets/svg'
-import Humidity from "../../assets/image/Humidity.png"
-import Temperature from "../../assets/image/Temperature.png"
-import WaterDrop from '../../assets/image/WaterDrop.png'
+import { SquareDot } from '../../../assets/svg'
+import Humidity from "../../../assets/image/Humidity.png"
+import Temperature from "../../../assets/image/Temperature.png"
+import WaterDrop from '../../../assets/image/WaterDrop.png'
 import Animated from 'component/animation'
 import { useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
