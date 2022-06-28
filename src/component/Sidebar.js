@@ -33,13 +33,6 @@ function Sidebar({ children, page = 'beranda' }) {
                                         <span className={`mx-4 ${page == "perangkat" ? 'font-bold' : 'font-medium'}`}>Perangkat</span>
                                     </Link>
                                 </li>
-
-                                <li>
-                                    <Link to='/dashboard/pengaturan' className={`cursor-pointer mt-2 flex items-center px-4 py-2 text-white-menu hover:bg-gray-200 rounded-md hover:text-dark-content  ${page === 'pengaturan' ? 'text-dark-content bg-gray-100' : ''}`}>
-                                        <AiOutlineSetting size={24} />
-                                        <span className={`mx-4 ${page == "pengaturan" ? 'font-bold' : 'font-medium'}`}>Pengaturan</span>
-                                    </Link>
-                                </li>
                             </ul>
                         </aside>
                     </div>

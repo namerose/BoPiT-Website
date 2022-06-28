@@ -19,7 +19,6 @@ function RegisterPage() {
     useEffect(() => {
         document.title = "Daftar | BoPiT"
         if (loading) return;
-        if (user) navigate("/dashboard");
     }, [user, loading, navigate]);
 
     const handleRegister = () => {
@@ -51,6 +50,7 @@ function RegisterPage() {
                 }).catch(err => {
                     console.log(err);
                 })
+            navigate('/login');
         }
     }
 
