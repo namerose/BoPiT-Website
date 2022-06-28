@@ -30,6 +30,7 @@ const logInWithEmailAndPassword = async (email, password) => {
                 message: "Pos-el atau belum ter-verifikasi!",
             };
         };
+        return {success: true}
     } catch (err) {
         if (err.code === 'auth/wrong-password') {
             return {

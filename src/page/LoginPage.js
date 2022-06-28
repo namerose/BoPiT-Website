@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Logo from '../assets/image/LogoBerwarna.png'
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, logInWithEmailAndPassword } from '../firebase';
+import { auth, logInWithEmailAndPassword, forgotPassword } from '../firebase';
 import { validateEmail } from '../function';
 
 function LoginPage() {
@@ -18,7 +18,7 @@ function LoginPage() {
         if (loading) {
             return;
         }
-        // if (user) navigate("/dashboard");
+        if (user) navigate("/dashboard");
     }, [user, loading, navigate]);
 
     const handleLogin = () => {
@@ -30,6 +30,9 @@ function LoginPage() {
             })
     }
 
+    const handleForgotPassword = () => {
+        forgotPassword(email);
+    }
 
     return (
         <div className='w-full h-screen flex flex-col justify-center items-center'>
@@ -66,7 +69,7 @@ function LoginPage() {
                             placeholder="Masukkan kata sandi"
                             className='mt-2 py-5 px-3 w-full h-5 bg-white rounded-xl border border-lightgrey justify-between items-center focus:outline-none focus:border-lightgrey border-md placeholder:italic'
                         />
-                        <div className="mt-2 flex justify-end cursor-pointer">
+                        <div onClick={handleForgotPassword} className="mt-2 flex justify-end cursor-pointer">
                             <p className="text-1xs mr-2 text-blue-600 ">Lupa kata sandi?</p>
                         </div>
                     </div>
