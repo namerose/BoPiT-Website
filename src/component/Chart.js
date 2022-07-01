@@ -1,34 +1,99 @@
-import React from 'react'
-import { Line } from "react-chartjs-2"
+import React from 'react';
+import ReactApexChart from 'react-apexcharts';
 
-function Chart({ chartData }) {
-    return (
-        <div>
-            <Line
-                data={chartData}
-                width={900}
-                height={400}
-                options={{
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: "Data Penyiraman",
-                            color: '#FFFFFF'
-                        },
-                        legend: {
-                            display: true,
-                            position: "bottom",
-                            fontColor: '#FFFFFF'
-                        },
-                        subtitle: {
-                            display: true,
-                            text: 'Custom Chart Subtitle'
-                        }
+const LineChart = ({ total, date }) => {
+    var state = {
+        series: [{
+            name: "Guests",
+            data: total,
+        }],
+        options: {
+            chart: {
+                type: 'area',
+                stacked: false,
+                height: 150,
+                zoom: {
+                    type: 'x',
+                    enabled: true,
+                    autoScaleYaxis: true
+                },
+                toolbar: {
+                    show: true,
+                    autoSelected: 'zoom'
+                },
+                animations: {
+                    enabled: true,
+                    easing: 'linear',
+                    speed: 1000,
+                    animateGradually: {
+                        enabled: true,
+                        delay: 150
                     },
-                }}
-            />
-        </div>
+                    dynamicAnimation: {
+                        enabled: true,
+                        speed: 350
+                    }
+                },
+
+            },
+            dataLabels: {
+                enabled: false,
+            },
+            markers: {
+                size: 4,
+            },
+            title: {
+                text: 'Total penggunaan air',
+                align: 'center',
+                style: {
+                    color: '#FFF',
+                    fontSize: '16px',
+                },
+            },
+            yaxis: {
+                labels: {
+                    style: {
+                        colors: "#FFF"
+                    }
+                },
+                title: {
+                    text: 'ml',
+                    style: {
+                        color: '#FFF',
+                        fontSize: '16px',
+                        fontWeight: 'light',
+                    },
+                },
+            },
+            xaxis: {
+                labels: {
+                    style: {
+                        colors: "#FFF"
+                    }
+                },
+                title: {
+                    text: 'tanggal',
+                    style: {
+                        color: '#FFF',
+                        fontSize: '16px',
+                        fontWeight: 'light',
+                    },
+                },
+                categories: date,
+            },
+            tooltip: {
+                enabled: true,
+                shared: false,
+                intersect: true
+            },
+            stroke: {
+                curve: 'smooth',
+            }
+        }
+    };
+
+    return (
+        <ReactApexChart options={state.options} series={state.series} type='line' height='100%' width='100%' />
     )
 }
-
-export default Chart
+export default LineChart

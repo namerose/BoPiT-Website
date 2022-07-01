@@ -10,7 +10,6 @@ import TentangKamiPage from '../page/Landing/TentangKamiPage'
 
 import Beranda from 'page/Dashboard/Beranda'
 import Perangkat from 'page/Dashboard/Perangkat'
-import Pengaturan from 'page/Dashboard/Pengaturan'
 import AddDevice from 'page/Dashboard/AddDevice'
 
 function Router() {
@@ -25,7 +24,6 @@ function Router() {
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/dashboard" element={<Beranda />} />
       <Route path='/dashboard/perangkat' element={<Perangkat />} />
-      <Route path='/dashboard/pengaturan' element={<Pengaturan />} />
       <Route path='/dashboard/add-device' element={<AddDevice />} />
     </Routes>
   )
