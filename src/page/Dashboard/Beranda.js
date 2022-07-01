@@ -1,38 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Sidebar from 'component/Sidebar';
-import AirHumidity from '../../assets/image/AirHumidity.png';
-import LandHumidity from '../../assets/image/LandHumidity.png';
-import AirTemperature from '../../assets/image/AirTemperature.png';
-import importLandTemperature from '../../assets/image/LandTemperature.png';
 import { auth, getChartData, getSensorData } from '../../firebase';
-import Chart from '../../component/Chart';
-
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-} from 'chart.js';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-);
-function Beranda() {
+import LineChart from '../../component/Chart';
+import RadialBar from '../../component/RadialBar';
+
+function Beranda({ sideBarOpen = false }) {
     const [sensor, setSensor] = useState({});
-    const [label, setLabel] = useState([]);
-    const [dataLabel, setDataLabel] = useState([]);
+    const [date, setDate] = useState([]);
+    const [totalWater, setTotalWater] = useState([]);
     const [user, loading] = useAuthState(auth);
 
     const navigate = useNavigate();
@@ -47,7 +25,7 @@ function Beranda() {
         if (!user) navigate("/login");
 
         configureData();
-    }, [navigate, user, loading, sensor, label, dataLabel]);
+    }, [navigate, user, loading, sensor, date, totalWater]);
 
     const configureData = () => {
         const label = [];
@@ -60,63 +38,58 @@ function Beranda() {
         })
 
         setSensor(getSensorData());
-        setLabel(label);
-        setDataLabel(dataLabel);
+        setDate(label);
+        setTotalWater(dataLabel);
     }
 
-    const data = {
-        labels: label,
-        datasets: [
-            {
-                label: 'Total Penyiraman',
-                data: dataLabel,
-                backgroundColor: 'rgb(80, 201, 255)',
-                borderWidth: 2,
-                borderColor: 'rgb(80, 201, 255)',
-            }
-        ],
-    }
+    const sensorVal = [
+        {
+            label: 'Humiditas Udara',
+            value: sensor.kelembabanUdara,
+            type: 'humidity',
+        },
+        {
+            label: 'Suhu Udara',
+            value: sensor.suhuUdara,
+            type: 'temperature',
+            color: '#F61B1B',
+        },
+        {
+            label: 'Humiditas Tanah',
+            value: sensor.kelembabanTanah,
+            type: 'humidity',
+        },
+        {
+            label: 'Suhu Tanah',
+            value: sensor.suhuTanah,
+            type: 'temperature',
+            color: '#F67A3D',
+        },
+    ]
 
     return (
-        <>
-            <Sidebar>
-                <div className='grid grid-cols-4 place-items-center'>
-                    <div className='bg-green-dashboard rounded-md flex p-8 w-11/12 mt-10'>
-                        <img src={AirHumidity} alt='' className='h-20' />
-                        <div className='text-white ml-5'>
-                            <p className='text-lg font-semibold'>Kelembaban Udara</p>
-                            <p className='text-2xl font-extrabold mt-4'>{sensor.kelembabanUdara}%</p>
+        <Sidebar>
+            <div className='text-white text-4xl font-extrabold ml-10 mt-5'>
+                Beranda
+            </div>
+            <div className='flex flex-wrap md:flex-cols justify-center md:justify-between place-items-center mx-5 md:mx-10 mt-8 '>
+                {sensorVal.map((items) => {
+                    return (
+                        <div className='bg-content-status flex flex-cols rounded-md items-center w-64 md:w-1/4 -mx-4 mt-2'>
+                            <RadialBar value={items.value} type={items.type} color={items.color} />
+                            <div className='text-white mr-4 w-1/2 font-semibold text-xl text-center'>
+                                {items.label}
+                            </div>
                         </div>
-                    </div>
-                    <div className='bg-green-dashboard rounded-md flex p-8 w-11/12 mt-10'>
-                        <img src={LandHumidity} alt='' className='h-20' />
-                        <div className='text-white ml-5'>
-                            <p className='text-lg font-semibold'>Kelembaban Tanah</p>
-                            <p className='text-2xl font-extrabold mt-4'>{sensor.kelembabanTanah}%</p>
-                        </div>
-                    </div>
-                    <div className='bg-green-dashboard rounded-md flex p-8 w-11/12 mt-10'>
-                        <img src={AirTemperature} alt='' className='h-24' />
-                        <div className='text-white ml-5'>
-                            <p className='text-lg font-semibold'>Suhu Udara</p>
-                            <p className='text-2xl font-extrabold mt-4'>{sensor.suhuUdara}°C</p>
-                        </div>
-                    </div>
-                    <div className='bg-green-dashboard rounded-md flex p-8 w-11/12 mt-10'>
-                        <img src={importLandTemperature} alt='' className='h-24' />
-                        <div className='text-white ml-5'>
-                            <p className='text-lg font-semibold'>Suhu Tanah</p>
-                            <p className='text-2xl font-extrabold mt-4'>{sensor.suhuTanah}°C</p>
-                        </div>
-                    </div>
+                    )
+                })}
+            </div>
+            <div className='w-full h-2/4 flex justify-center items-center mt-8'>
+                <div className='mx-10 w-full h-full'>
+                    <LineChart total={totalWater} date={date} />
                 </div>
-                <div className='w-full flex flex-col justify-center items-center'>
-                    <div className='bg-content-status rounded-md flex flex-col justify-center items-center p-8 w-11/12 mt-10 text-white'>
-                        <Chart chartData={data} />
-                    </div>
-                </div>
-            </Sidebar>
-        </>
+            </div>
+        </Sidebar>
     );
 }
 
