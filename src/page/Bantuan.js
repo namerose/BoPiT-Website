@@ -26,7 +26,7 @@ function Bantuan() {
           </Link>
           <TypeAnimation
             cursor={true}
-            sequence={['Hal yang sering ditanyakan.']}
+            sequence={['Hal yang sering ditanyakan. testingg aja gan']}
             wrapper="div"
             className='text-4xl text-center pt-20 text-white font-bold'
           />
