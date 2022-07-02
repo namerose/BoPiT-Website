@@ -4,7 +4,7 @@ import ReactApexChart from 'react-apexcharts';
 const LineChart = ({ total, date }) => {
     var state = {
         series: [{
-            name: "Guests",
+            name: "Total Penggunaan",
             data: total,
         }],
         options: {
