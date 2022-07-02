@@ -23,11 +23,26 @@ function Beranda({ sideBarOpen = false }) {
         }
 
         if (!user) navigate("/login");
+        if (Object.keys(sensor).length === 0) {
+            configureSensor();
+        } else {
+            setTimeout(() => {
+                configureSensor();
+            }, 60000);
+        }
+    }, [navigate, user, loading, sensor]);
 
-        configureData();
-    }, [navigate, user, loading, sensor, date, totalWater]);
+    useEffect(() => {
+        if (date.length === 0) {
+            configureData();
+        }
+    }, [navigate, user, date]);
 
-    const configureData = () => {
+    const configureSensor = () => {
+        setSensor(getSensorData());
+    }
+
+    async function configureData() {
         const label = [];
         const dataLabel = [];
         const chartData = getChartData();
@@ -37,7 +52,6 @@ function Beranda({ sideBarOpen = false }) {
             dataLabel.push(item.data);
         })
 
-        setSensor(getSensorData());
         setDate(label);
         setTotalWater(dataLabel);
     }

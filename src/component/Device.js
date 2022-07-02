@@ -2,6 +2,7 @@ import { database, getDevices } from '../firebase';
 import React from 'react'
 import { BsTrashFill } from "react-icons/bs";
 import { ref, remove } from 'firebase/database';
+import { useNavigate } from 'react-router-dom';
 
 const handleDelete = (id) => {
     const confirm = window.confirm('Apakah anda yakin ingin menghapus perangkat ini?');
@@ -31,9 +32,11 @@ const Item = ({ id, name, status }) => (
 
 export default function Device() {
     const [devices, setDevices] = React.useState([]);
+    const navigate = useNavigate();
+
     React.useEffect(() => {
         setDevices(getDevices());;
-    }, [devices]);
+    }, [navigate]);
 
     return (
         <div className="overflow-hidden divide-y shadow-sm">

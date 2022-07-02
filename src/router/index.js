@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Produk from '../page/Produk'
+import ProdukPage from '../page/Landing/ProdukPage'
 import LoginPage from '../page/LoginPage'
 import HubungiKami from '../page/HubungiKamiPage'
 import RegisterPage from '../page/RegisterPage'
@@ -18,7 +18,7 @@ function Router() {
       <Route path="/" element={<BerandaPage />} />
       <Route path="/tentang-kami" element={<TentangKamiPage />} />
       <Route path="/bantuan" element={<HelpPage />} />
-      <Route path="/produk" element={<Produk />} />
+      <Route path="/produk" element={<ProdukPage />} />
       <Route path="/hubungi-kami" element={<HubungiKami />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />

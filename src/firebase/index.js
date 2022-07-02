@@ -104,11 +104,14 @@ const getChartData = () => {
     const dbRef = ref(database, "Log/");
     let listDate = [];
     let data = [];
+
     onValue(dbRef, (snapshot) => {
         const dataFromFirebase = snapshot.val();
+
         Object.keys(dataFromFirebase).forEach(function (key) {
             const date = moment.unix(key).format('LL');
             let total = dataFromFirebase[key].TotalUsage;
+
             if (!listDate.includes(date)) {
                 listDate.push(date);
                 data.push({ label: date, data: total });
@@ -118,6 +121,7 @@ const getChartData = () => {
             }
         });
     });
+
     return data;
 };
 
