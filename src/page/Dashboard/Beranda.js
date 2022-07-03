@@ -12,6 +12,7 @@ function Beranda({ sideBarOpen = false }) {
     const [date, setDate] = useState([]);
     const [totalWater, setTotalWater] = useState([]);
     const [user, loading] = useAuthState(auth);
+    const [show, setShow] = useState(false);
 
     const navigate = useNavigate();
 
@@ -26,6 +27,8 @@ function Beranda({ sideBarOpen = false }) {
         if (Object.keys(sensor).length === 0) {
             configureSensor();
         } else {
+            setShow(true);
+
             setTimeout(() => {
                 configureSensor();
             }, 60000);
@@ -86,21 +89,23 @@ function Beranda({ sideBarOpen = false }) {
             <div className='text-white text-4xl font-extrabold ml-10 mt-5'>
                 Beranda
             </div>
-            <div className='flex flex-wrap md:flex-cols justify-center md:justify-between place-items-center mx-5 md:mx-10 mt-8 '>
-                {sensorVal.map((items) => {
-                    return (
-                        <div className='bg-content-status flex flex-cols rounded-md items-center w-64 md:w-1/4 -mx-4 mt-2'>
-                            <RadialBar value={items.value} type={items.type} color={items.color} />
-                            <div className='text-white mr-4 w-1/2 font-semibold text-xl text-center'>
-                                {items.label}
+            <div className='duration-900 h-full'>
+                <div className={`flex flex-wrap md:flex-cols justify-center md:justify-between place-items-center mx-5 md:mx-10 mt-8 `}>
+                    {show && sensorVal.map((items) => {
+                        return (
+                            <div className={`bg-content-status grid grid-cols-2  duration-300 rounded-md items-center justify-center w-64 md:w-1/4 -mx-4 mt-2 hover:mt-0 hover:shadow-xl hover:shadow-slate-800 hover:p-1 `}>
+                                <RadialBar value={items.value} type={items.type} color={items.color} />
+                                <div className='text-white mr-4 font-semibold text-xl text-center'>
+                                    {items.label}
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
-            </div>
-            <div className='w-full h-2/4 flex justify-center items-center mt-8'>
-                <div className='mx-10 w-full h-full'>
-                    <LineChart total={totalWater} date={date} />
+                        )
+                    })}
+                </div>
+                <div className='w-full h-2/4 flex justify-center items-center mt-8'>
+                    <div className='mx-10 w-full h-full'>
+                        <LineChart total={totalWater} date={date} />
+                    </div>
                 </div>
             </div>
         </Sidebar>
