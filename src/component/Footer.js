@@ -39,7 +39,7 @@ function Footer({ space = false }) {
             </div>
             <div className='w-full grid mt-10'>
                 <div className='text-white text-xl place-self-center'>
-                    © 2022 BoPiT Amikom Yk.
+                    © {(new Date().getFullYear())} BoPiT Amikom Yk.
                 </div>
             </div>
         </div>
