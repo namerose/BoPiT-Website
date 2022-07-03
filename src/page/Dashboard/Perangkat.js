@@ -2,14 +2,12 @@ import Sidebar from 'component/Sidebar'
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { AiOutlinePlus } from "react-icons/ai";
-import { useNavigate } from 'react-router-dom';
 import { getDevices } from '../../firebase';
 
 import Device from '../../component/Device.js'
 
 function Perangkat() {
     const [devices, setDevices] = React.useState([]);
-    const navigate = useNavigate();
 
     React.useEffect(() => {
         setTimeout(() => {

@@ -4,7 +4,6 @@ import { auth, getChartData, getSensorData } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 
-import Animated from 'component/animation'
 import LineChart from '../../component/Chart';
 import RadialBar from '../../component/RadialBar';
 
