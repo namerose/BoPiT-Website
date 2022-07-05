@@ -64,6 +64,7 @@ const registerWithEmailAndPassword = async (name, username, email, password) => 
             email,
         });
         sendEmailVerification(res.user);
+        signOut(auth);
     } catch (err) {
         return {
             success: false,
