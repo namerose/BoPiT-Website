@@ -67,7 +67,7 @@ function RegisterPage() {
                 <div>
                     <Animated.FromDirection from="left" custom={1} delay={1}>
 
-                        <div className='mt-10 text-3xl font-extrabold' >
+                        <div className='mt-10 text-3xl font-bold' >
                             Daftar akun baru
                         </div>
                         {!response.success && (
