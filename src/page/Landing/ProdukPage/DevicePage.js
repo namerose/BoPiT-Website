@@ -23,20 +23,22 @@ function DevicePage() {
             ref={section => {
                 refView(section);
             }}>
-            <div className='h-screen pt-20 pl-10'>
-                <div className='h-1/2'>
+            <div className='h-screen grid grid-rows-2 content-between pt-20 pl-10'>
+                <div>
                     <Animated.FromDirection from="left" animate={controls} custom={1} delay={0.2}>
-                        <img src={produkFront} className="w-2/4 justify-self-center" alt='' />
+                        <div className='w-full grid'>
+                            <img src={produkFront} className="w-2/4 justify-self-center" alt='' />
+                        </div>
                     </Animated.FromDirection>
                 </div>
-                <div className='h-1/2'>
+                <div>
                     <Animated.FromDirection from="bottom" animate={controls} custom={0} delay={1}>
                         <Animated.Reveal from="bottom" animate={controls} custom={1} delay={1}>
                             <div className="text-2xl">
                                 Banyak Pilihan
                             </div>
                             <div className="text-3xl font-extrabold pt-3">
-                                Banyak Pilihan Sesuai Kebutuhan Anda
+                                Banyak Pilihan, Sesuai Kebutuhan Anda
                             </div>
                             <div className="text-2xl pt-3">
                                 Dukungan LoRa-WAN dan panel surya untuk transmisi jarak jauh membuat perangkat BoPiT dapat dipasang pada daerah yang jauh dari pemukiman dan minim akes internet.
@@ -56,7 +58,7 @@ function DevicePage() {
                                 Biaya Hemat, Kualitas Hebat
                             </div>
                             <div className="text-2xl pt-3">
-                                Anda bisa memiliki perangkat BoPiT  siap pakai dengan sedikit biaya. Fitur yang lengkap dilengkapi dengan WiFi akan memudahkan pengelolaan tanaman pada halaman rumah Anda.
+                                Anda bisa memiliki perangkat BoPiT  siap pakai dengan sedikit biaya. Fitur lengkap disertai WiFi akan memudahkan pengelolaan tanaman pada halaman rumah Anda.
                             </div>
                         </Animated.Reveal>
                     </Animated.FromDirection>
@@ -64,7 +66,9 @@ function DevicePage() {
                 </div>
                 <div>
                     <Animated.FromDirection from="right" animate={controls} custom={1} delay={0.2}>
-                        <img src={produkBack} className="w-3/4 justify-self-center" alt='' />
+                        <div className='w-full grid'>
+                            <img src={produkBack} className="w-3/4 justify-self-center" alt='' />
+                        </div>
                     </Animated.FromDirection>
                 </div>
             </div>
