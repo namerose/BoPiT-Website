@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { logout } from '../firebase';
 
 function Sidebar({ children, page = 'beranda' }) {
-    const [isOpen, setOpen] = useState(false);
+    const [isOpen, setOpen] = useState(true);
 
     const logOut = () => {
         logout();
