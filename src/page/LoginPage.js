@@ -46,7 +46,7 @@ function LoginPage() {
                         <img src={Logo} className="w-middle" alt='' />
                     </Link>
 
-                    <div className='mt-10 text-3xl text-center font-extrabold' >
+                    <div className='mt-10 text-3xl text-center font-bold' >
                         Masuk
                     </div>
                     <div className="border-gray-light border-2 shadow-md rounded-xl p-4 mt-5">
